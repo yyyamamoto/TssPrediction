@@ -1,0 +1,27 @@
+/peak_find_SG.py
+/Output files/Chr1_scan_PRI200_60-750_450_forward.txt
+/Output files/Chr1_scan_IGI200_60_forward.txt
+/Output files/Chr1_scan_IGI750_450_forward.txt
+
+Chromosome: Chr1
+Score: PRI200_60-750_450
+Strand: forward
+Window Size: 151
+Degree: 1
+PRI threshold: 0
+IGI threshold: 0
+Peak Integration: 100
+
+Position	Score
+2641	0.0674680356623
+3031	0.0970329778079
+3286	0.0603140020927
+5060	0.00928688155629
+7321	0.016209402649
+9392	0.0245486429735
+10656	0.000890003516556
+10829	0.0112170774636
+11254	0.0825647355298
+12570	0.0233079915166
+14233	0.0405180347881
+16348	0.0823597525762

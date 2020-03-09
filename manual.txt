@@ -1,0 +1,78 @@
+＜Required＞
+Python3
+numpy
+scipy
+
+＜How to use＞
+0. Activation of script
+At the command prompt, enter the following.
+    python3 [script file] [command line argument 1] [command line argument 2]...
+
+Input example:
+    python3 chrom_scan.py Chr1_for_test.con IGI200_60_forChr1-2.txt IGI750_450_forChr1-2.txt PRI200_60-750_450_forChr1-2.txt 5UTR-IGI750_450_forChr1-2.txt
+
+1. Scoring base sequence
+Input the FASTA file (Chr1_for_test.con) and any number of score tables (IGI200_60_forChr1-2.txt etc.) to chrom_scan.py as command line arguments.
+
+Input file example：
+Chr1_for_test.con
+IGI200_60_forChr1-2.txt
+IGI750_450_forChr1-2.txt
+PRI200_60-750_450_forChr1-2.txt
+5UTR-IGI750_450_forChr1-2.txt
+
+Output file example：
+------------------------------------------
+Chr1_scan_IGI200_60_forward.txt
+Chr1_scan_IGI200_60_reverse.txt
+------------------------------------------
+Chr1_scan_IGI750_450_forward.txt
+Chr1_scan_IGI750_450_reverse.txt
+------------------------------------------
+Chr1_scan_PRI200_60-750_450_forward.txt
+Chr1_scan_PRI200_60-750_450_reverse.txt
+------------------------------------------
+Chr1_scan_5UTR-IGI750_450_forward.txt
+Chr1_scan_5UTR-IGI750_450_reverse.txt
+------------------------------------------
+
+Note
+・Only supports single FASTA
+・Chromosome number cannot be recognized correctly unless "chr + number" is included in the name of the FASTA file
+・You can enter any number of score tables, but only one FASTA file
+・In the file name of the score table, "for..." is required
+・If "IGI" or "PRI" is not included in the file name of the score table, it will not be recognized correctly as a score table
+・If a file with the same name as the output file already exists, it will be overwritten without warning
+
+
+2. Extraction of PRI peak
+Input the output file of chrom_scan.py (arbitrary number of sets with one PRI and two IGIs as a set) to peak_find_SG.py as a command line argument.
+
+Input file example：
+------------------------------------------
+Chr1_scan_IGI200_60_forward.txt
+Chr1_scan_IGI750_450_forward.txt
+Chr1_scan_PRI200_60-750_450_forward.txt
+------------------------------------------
+Chr1_scan_IGI200_60_reverse.txt
+Chr1_scan_IGI750_450_reverse.txt
+Chr1_scan_PRI200_60-750_450_reverse.txt
+------------------------------------------
+
+Output file example：
+------------------------------------------
+Chr1_peak_forward.txt
+------------------------------------------
+Chr1_peak_reverse.txt
+------------------------------------------
+
+3. Extraction of 5'UTR peak
+Input the output file of chrom_scan.py (arbitrary number of 5'UTR scores) to peak_find_SG_5UTR_edge_both.py as a command line argument.
+
+Input file example：
+Chr1_scan_5UTR-IGI750_450_forward.txt
+Chr1_scan_5UTR-IGI750_450_reverse.txt
+
+Output file example：
+Chr1_5UTRedge_both_forward.txt
+Chr1_5UTRedge_both_reverse.txt
