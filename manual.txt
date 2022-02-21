@@ -44,6 +44,15 @@ Note
 ・If "IGI" or "PRI" is not included in the file name of the score table, it will not be recognized correctly as a score table
 ・If a file with the same name as the output file already exists, it will be overwritten without warning
 
+1.2 Preparation of PRI (and IGI) table
+run calc_igi_pri.py with argumets of output files from chrom_scan.py. Example input file: first argument = Arabi_All_-200_-60.txt, second argument = Arabi_All_-750_-450.txt. 
+
+Output files: 
+  IGI_Arabi_All_-200_-60.txt, 
+  IGI_Arabi_All_-750_-450.txt, 
+  PRI.txt.
+
+
 
 2. Extraction of PRI peak
 Input the output file of chrom_scan.py (arbitrary number of sets with one PRI and two IGIs as a set) to peak_find_SG.py as a command line argument.
